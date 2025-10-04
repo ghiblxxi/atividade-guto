@@ -9,3 +9,12 @@ if usar_numeros:
     caracteres += string.digits
 if usar_simbolos:
     caracteres += string.punctuation
+def gerar_multiplas_senhas(qtd=5, tamanho=8, simbolos=True):
+    senhas = []
+    for _ in range(qtd):
+        senhas.append(gerar_senha(tamanho, simbolos))
+    return senhas
+
+qtd = int(input("Quantas senhas gerar? "))
+for s in gerar_multiplas_senhas(qtd, tamanho=12, simbolos=True):
+    print(s)
